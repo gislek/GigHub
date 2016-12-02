@@ -36,11 +36,9 @@ namespace GigHub.Models
 
         public static Notification GigUpdated(Gig newGig, DateTime originalDateTime, string originalVenue)
         {
-            var notification = new Notification(NotificationType.GigUpdated, newGig)
-            {
-                OriginalDateTime = originalDateTime,
-                OriginalVenue = originalVenue
-            };
+            var notification = new Notification(NotificationType.GigUpdated, newGig);
+            notification.OriginalDateTime = originalDateTime;
+            notification.OriginalVenue = originalVenue;
 
             return notification;
         }

@@ -47,6 +47,17 @@ span.field-validation-error {
         font-weight: 700;
     }
 
+    .navbar-invserse .notifications {
+        position: relative;
+    }
+    
+    .navbar-inverse .notifications .badge {
+        position: absolute;
+        top: 8px;
+        right: -1px;
+        background: #a80a0a;
+    }
+
     .navbar-inverse .navbar-nav > li > a {
         color: #fff;
     }
@@ -64,6 +75,7 @@ span.field-validation-error {
     border-top-color: #ffffff;
     border-bottom-color: #ffffff;
 }
+
 
 body {
     font-size: 17px;

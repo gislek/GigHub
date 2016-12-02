@@ -14,7 +14,6 @@ namespace GigHub.Models
         [Column(Order = 2)]
         public int NotificationId { get; private set; }
 
-
         public ApplicationUser User { get; private set; }
         public Notification Notification { get; private set; }
 
