@@ -135,6 +135,8 @@ h6 {
   height: 44px;
   -ms-border-radius: 9px;
   border-radius: 9px;
+  -webkit-transition: none;
+  transition: none;
 }
 .form-control:focus {
   border-color: #2196f3;
@@ -208,4 +210,7 @@ h6 {
 }
 .popover-notifications ul.notifications .highlight {
   font-weight: bold;
+}
+#searchGigs {
+  width: 300px;
 }

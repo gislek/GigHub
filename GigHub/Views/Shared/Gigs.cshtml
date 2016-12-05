@@ -4,9 +4,21 @@
 }
 
 <h1>@Model.Heading</h1>
+@using (Html.BeginForm("Search", "Gigs"))
+{
+    <div class="form-group">
+        <div id="searchGigs" class="input-group">
+            @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control", placeholder = "Search by artist, genre..." })
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-search"></i>
+            </span>
+        </div>
+    </div>
+}
+
 <ul class="gigs voffset4">
     @foreach (var gig in Model.UpcomingGigs)
-    {
+            {
         <li>
             <div class="date">
                 <div class="month">
@@ -19,9 +31,9 @@
             <div class="details">
                 <span class="artist">
                     @gig.Artist.Name
-                    
+
                     @if (gig.IsCanceled)
-                            {
+                    {
                         <span class="label label-warning">Canceled</span>
                     }
 
@@ -45,18 +57,18 @@
 {
     <script>
         $(document)
-            .ready(function() {
+            .ready(function () {
                 $(".js-toggle-attendance")
-                    .click(function(e) {
+                    .click(function (e) {
                         var button = $(e.target);
                         $.post("/api/attendances", { gigId: button.attr("data-gig-id") })
-                            .done(function() {
+                            .done(function () {
                                 button.removeClass("btn-default")
                                     .addClass("btn-info")
                                     .text("Going");
 
                             })
-                            .fail(function() {
+                            .fail(function () {
                                 alert("Something failed!");
                             });
                     });
