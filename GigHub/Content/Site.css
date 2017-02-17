@@ -147,6 +147,9 @@ h6 {
   -ms-border-radius: 9px;
   border-radius: 9px;
 }
+.btn:focus {
+  outline: none;
+}
 /* Page-level styles */
 .gigs {
   list-style: none;
